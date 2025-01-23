@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
+// Initialize EmailJS with your public key
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+
 const Contact = () => {
     // Form data state
     const [formData, setFormData] = useState({
@@ -30,20 +33,18 @@ const Contact = () => {
         setError('');
         setSubmitSuccess(false);
 
-        // Here you would typically send the form data to your backend
-        // For now, we'll just simulate a submission
         try {
             // Simulate API call
             await emailjs.send(
-                'service_99z4v02',
-                'template_lfiboju',
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
                 {
                     from_name: formData.name,
                     from_email: formData.email,
                     message: formData.message,
                     to_name: 'Jordan',
                 },
-                '8qy6mk3j4xQ_9pH5o'
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             );
 
             setSubmitSuccess(true);
