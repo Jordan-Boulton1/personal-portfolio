@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     // Form data state
@@ -11,6 +12,7 @@ const Contact = () => {
     // Loading and success states
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitSuccess, setSubmitSuccess] = useState(false);
+    const [error, setError] = useState('');
 
     // handle input change
     const handleChange = (e) => {
@@ -25,17 +27,30 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setError('');
+        setSubmitSuccess(false);
 
         // Here you would typically send the form data to your backend
         // For now, we'll just simulate a submission
         try {
             // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await emailjs.send(
+                'service_99z4v02',
+                'template_lfiboju',
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    message: formData.message,
+                    to_name: 'Jordan',
+                },
+                '8qy6mk3j4xQ_9pH5o'
+            );
+
             setSubmitSuccess(true);
-            // Reset form
             setFormData({ name: '', email: '', message: '' });
         } catch (error) {
-            console.error('Error submitting form', error);
+            console.error('An error occurred while trying to send the email', error);
+            setError("Failed to send email. Please try again.");
         } finally {
             setIsSubmitting(false);
         }
@@ -121,6 +136,13 @@ const Contact = () => {
                                 placeholder="Your message here..."
                             />
                         </div>
+
+                        {/* Error message */}
+                        {error && (
+                            <p className="text-red-600 text-center">
+                                {error}
+                            </p>
+                        )}
 
                         {/* Submit button */}
                         <button
