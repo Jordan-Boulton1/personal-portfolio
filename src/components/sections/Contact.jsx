@@ -210,7 +210,7 @@ const Contact = () => {
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="absolute bottom-0 right-4 sm:right-6 lg:right-8"
+                    className="mt-10 text-center lg:text-right"
                 >
                     <p className="text-blue-200/60 text-sm">
                         © {new Date().getFullYear()} Jordan Boulton. All rights reserved.
