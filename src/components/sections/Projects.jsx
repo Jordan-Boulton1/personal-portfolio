@@ -41,7 +41,7 @@ const Projects = () => {
     ];
 
     return (
-        <section className="relative py-20 bg-gradient-to-br from-blue-950 via-black to-blue-950">
+        <section id="projects" className="relative py-20 bg-gradient-to-br from-blue-950 via-black to-blue-950">
             {/* Background glow effect */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/4 left-0 w-96 h96 bg-blue-500/10 rounded-full blur-3xl"></div>

@@ -58,7 +58,7 @@ const Hero = () => {
                         </motion.a>
 
                         <motion.a
-                            href="https://www.linkedin.com/in/jordan-boulton-dev/"
+                            href="https://www.linkedin.com/in/jordan-boulton-b5888b227/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-3 rounded-xl bg-blue-950/20 hover:bg-blue-900/30 transition-all duration-300"
