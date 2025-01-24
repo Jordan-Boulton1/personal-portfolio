@@ -88,9 +88,8 @@ const About = () => {
             </ul>
           </div>
 
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <div className="aspect-square rounded-lg bg-gray-100 dark:bg-gray-700">
-              {/* Add your image here */}
               <img
                 src="/images/jordan-mugshot.png"
                 alt="Your Name"
