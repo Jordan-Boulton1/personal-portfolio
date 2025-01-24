@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Meteors from '../ui/Meteors';
 
@@ -71,18 +72,24 @@ const Hero = () => {
 
                     {/* CTA Buttons */}
                     <div className="flex justify-center gap-4">
-                        <a
-                            href="#projects"
-                            className="px-8 py-3 bg-white text-blue-700 hover:bg-blue-50 rounded-lg transition-colors duration-300"
+                        <Link
+                            to="projects"
+                            smooth={true}
+                            duration={500}
+                            offset={-20}
+                            className="px-8 py-3 bg-white text-blue-700 hover:bg-blue-50 rounded-lg transition-colors duration-300 cursor-pointer"
                         >
                             View Projects
-                        </a>
-                        <a
-                            href="#contact"
-                            className="px-8 py-3 border-2 border-white text-white hover:bg-white/10 rounded-lg transition-colors duration-300"
+                        </Link>
+                        <Link
+                            to="contact"
+                            smooth={true}
+                            duration={500}
+                            offset={-20}
+                            className="px-8 py-3 border-2 border-white text-white hover:bg-white/10 rounded-lg transition-colors duration-300 cursor-pointer"
                         >
                             Contact Me
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Scroll indicator */}
