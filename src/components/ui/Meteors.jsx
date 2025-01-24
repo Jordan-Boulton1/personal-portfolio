@@ -2,7 +2,7 @@ const Meteors = ({ number }) => {
     // Create an array of meteor objects
     const meteors = Array.from({ length: number || 20 }, (_, index) => ({
         id: index,
-        size: Math.floor(Math.random() * 40) + 30, // Increased size range (30-70px)
+        size: Math.floor(Math.random() * 40) + 30,
         left: Math.floor(Math.random() * 100),
         delay: Math.floor(Math.random() * 2000),
         duration: Math.floor(Math.random() * 1000) + 2000,
@@ -22,10 +22,10 @@ const Meteors = ({ number }) => {
                         animationDuration: `${meteor.duration}ms`,
                     }}
                 >
-                    {/* Meteor head - slightly thicker */}
+                    {/* Meteor head */}
                     <span className="absolute left-0 top-1/2 w-[15%] h-[3px] -translate-y-1/2 bg-white/40 rounded-full" />
                     
-                    {/* Meteor trail - adjusted opacity */}
+                    {/* Meteor trail */}
                     <span className="absolute left-[15%] top-1/2 w-[85%] h-px -translate-y-1/2 bg-gradient-to-r from-white/40 via-white/20 to-transparent" />
                 </span>
             ))}

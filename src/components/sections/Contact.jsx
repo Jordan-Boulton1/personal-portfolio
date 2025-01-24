@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-// Initialize EmailJS with your public key
+// Initialize EmailJS with public key
 emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 const Contact = () => {

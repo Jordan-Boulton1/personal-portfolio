@@ -5,18 +5,18 @@ import Meteors from '../ui/Meteors';
 const Hero = () => {
     return (
         <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-blue-950 to-blue-900 py-20 overflow-hidden">
-            {/* Background decoration - moved to back with z-index */}
+            {/* Background decoration */}
             <div className="absolute inset-0 overflow-hidden z-0">
                 <div className="absolute -top-40 -right-32 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl"></div>
                 <div className="absolute -bottom-40 -left-32 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl"></div>
             </div>
 
-            {/* Meteors - between background and content */}
+            {/* Meteors */}
             <div className="absolute inset-0 z-10">
                 <Meteors number={20} />
             </div>
 
-            {/* Content container - moved to front with z-index */}
+            {/* Content container */}
             <div className="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -38,13 +38,13 @@ const Hero = () => {
                         Junior Full Stack Developer
                     </h2>
 
-                    {/* Description - adjusted for readability */}
+                    {/* Description */}
                     <p className="max-w-2xl mx-auto text-blue-50/90 mb-12">
                         I build modern web applications with a focus on clean code and user experience. 
                         Passionate about creating solutions that make a difference.
                     </p>
 
-                    {/* Social Media Icons with updated hover colors */}
+                    {/* Social Media Icons */}
                     <div className="flex justify-center gap-6 mb-12">
                         <motion.a
                             href="https://github.com/Jordan-Boulton1"
@@ -85,7 +85,7 @@ const Hero = () => {
                         </a>
                     </div>
 
-                    {/* Scroll indicator - significantly increased bottom spacing */}
+                    {/* Scroll indicator */}
                     <motion.div
                         className="absolute bottom-[-120px] left-1/2 -translate-x-1/2 z-30"
                         animate={{ y: [0, 10, 0] }}
